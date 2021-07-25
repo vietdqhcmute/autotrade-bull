@@ -4,7 +4,7 @@
   "description": "",
   "main": "dist/index.js",
   "scripts": {
-    "start": "node dist/index.js",
+    "start": "tsc --project ./ && node dist/index.js",
     "build": "tsc --project ./",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -20,9 +20,11 @@
   },
   "homepage": "https://github.com/vietdqhcmute/autotrade-bull#readme",
   "dependencies": {
+    "bull-arena": "^3.29.1",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
+    "mongoose": "^5.13.3",
     "morgan": "^1.10.0"
   },
   "devDependencies": {

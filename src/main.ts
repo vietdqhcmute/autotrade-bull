@@ -1,11 +1,13 @@
 import http from "http";
 import config from "../config";
-import initExpress from "./inits/initExpress";
-const port = 8080; // default port to listen
+import InitExpress from "./inits/initExpress";
+import InitMongo from "./inits/initMongo";
 
-const runApp = () => {
+const runApp = async () => {
   try {
-    const app = initExpress();
+    await InitMongo();
+
+    const app = InitExpress();
     const server = http.createServer(app);
     const { PORT } = config.server;
 
