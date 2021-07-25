@@ -1,7 +1,7 @@
 import express from "express";
 const router = express.Router();
 
-import queueConfig from "./queues";
+import queueConfig from "../src/queue";
 
 router.use("/queues", queueConfig);
 export default router;
