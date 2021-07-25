@@ -1,15 +1,19 @@
-import express from "express";
-const app = express();
+import http from "http";
+import config from "../config";
+import initExpress from "./inits/initExpress";
 const port = 8080; // default port to listen
 
 const runApp = () => {
-  app.get("/", (req, res) => {
-    res.send("Hello world!");
-  });
+  try {
+    const app = initExpress();
+    const server = http.createServer(app);
+    const { PORT } = config.server;
 
-  app.listen(port, () => {
-    console.log(`server started at http://localhost:${port}`);
-  });
+    server.listen(PORT, () => console.log(`Listening on port ${PORT}`));
+  } catch (err) {
+    console.error(err);
+    process.exit(1);
+  }
 };
 
 export default runApp;
