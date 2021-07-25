@@ -3,7 +3,8 @@ import morgan from "morgan";
 import cors from "cors";
 import path from "path";
 
-// import router from "../routes";
+import router from "../../routes";
+
 export default () => {
   const app = express();
   app.disable("x-power-by");
@@ -14,7 +15,8 @@ export default () => {
     "/static",
     express.static(path.join(__dirname, "../uploads/avatars"))
   );
-  // app.use('/', router)
+
+  app.use("/", router);
 
   return app;
 };

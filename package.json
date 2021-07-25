@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/vietdqhcmute/autotrade-bull#readme",
   "dependencies": {
+    "bull": "^3.26.0",
     "bull-arena": "^3.29.1",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
@@ -28,6 +29,8 @@
     "morgan": "^1.10.0"
   },
   "devDependencies": {
+    "@types/bull": "^3.15.2",
+    "@types/bull-arena": "^3.0.4",
     "@types/cors": "^2.8.12",
     "@types/express": "^4.17.13",
     "@types/morgan": "^1.9.3",
